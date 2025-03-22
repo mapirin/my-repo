@@ -2,6 +2,6 @@ name: Workflow-error
 on: push
 jobs:
     run:
-        runs-on: windows-latest
+        run-on: windows-latest
         steps:
         - run: date
