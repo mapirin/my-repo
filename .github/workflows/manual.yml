@@ -8,7 +8,13 @@ on:
                 required: true
                 description: A cheerful word
 jobs:
-    run:
+    set-summary:
+        runs-on: windows-latest
+        steps:
+            - run: echo "${{ github.event.inputs.user_input }}"
+
+    runs:
+        needs: set-summary
         runs-on: windows-latest
         steps:
             - run: echo "${{inputs.geeting}}"
